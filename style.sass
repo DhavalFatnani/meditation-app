@@ -11,13 +11,15 @@
     align-items: center
 
 video
-    width: 100%
-    height: 100%
-    object-fit: fill
+    position: fixed
+    right: 0
+    bottom: 0
+    min-width: 100%
+    min-width: 100%
 
 .ops
     width: 80%
-    height: auto
+    height: 30rem
     position: absolute
     display: flex
     justify-content: space-between
@@ -32,7 +34,13 @@ video
 
 .timer-container button
     padding: 1rem 2rem
-    background: transparentize(0, 1)
+    background-color: transparent
+    border: 2px solid white
+    color: white
+    border-radius: 0.6rem
+    cursor: pointer
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.8)
+    
 
 .player-container .player
     height: 32rem
