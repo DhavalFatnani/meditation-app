@@ -4,7 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./images/meditation-favicon.png" />
+    <link rel="stylesheet" href="./style.css" />
     <title>MediMate</title>
   </head>
-  <body></body>
+  <body>
+    <div class="app-container">
+      <div class="video-container">
+        <video loop src="./images/ocean.mp4" autoplay></video>
+      </div>
+      <div class="ops">
+        <div class="timer-container">
+          <button class="two-mins">2 minutes</button>
+          <button class="five-mins">5 minutes</button>
+          <button class="ten-mins">10 minutes</button>
+        </div>
+        <div class="player-container">
+          <div class="player">
+            <button class="play">Play</button>
+            <button class="pause hidden">Pause</button>
+          </div>
+        </div>
+        <div class="mood-container">
+          <div class="moods">
+            <button class="galaxy">galaxy</button>
+            <button class="monk">monk</button>
+            <button class="ocean">ocean</button>
+            <button class="rain">rain</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
