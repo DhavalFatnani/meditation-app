@@ -10,26 +10,63 @@
   <body>
     <div class="app-container">
       <div class="video-container">
-        <video loop src="./images/ocean.mp4" autoplay></video>
+        <video
+          autoplay
+          muted
+          loop
+          src="./images/ocean.mp4"
+          class="background-video"></video>
       </div>
       <div class="ops">
         <div class="timer-container">
-          <button class="two-mins">2 minutes</button>
-          <button class="five-mins">5 minutes</button>
-          <button class="ten-mins">10 minutes</button>
+          <button class="two-mins" onclick="setTimer(2)">2 minutes</button>
+          <button class="five-mins" onclick="setTimer(5)">5 minutes</button>
+          <button class="ten-mins" onclick="setTimer(10)">10 minutes</button>
         </div>
         <div class="player-container">
           <div class="player">
-            <button class="play"></button>
-            <button class="pause hidden">Pause</button>
+            <button id="play-pause" onclick="togglePlayPause()">
+              <img
+                src="./images/play.svg"
+                alt="play-button"
+                class="play"
+                hidden />
+              <img src="./images/pause.svg" alt="pause-button" class="pause" />
+            </button>
           </div>
+          <img
+            src="./images/restart.svg"
+            alt="restart-button"
+            onclick="restartTimer()"
+            class="restart" />
+          <h3 class="time">0:00</h3>
         </div>
         <div class="mood-container">
           <div class="moods">
-            <button class="galaxy">galaxy</button>
-            <button class="monk">monk</button>
-            <button class="ocean">ocean</button>
-            <button class="rain">rain</button>
+            <button class="galaxy">
+              <img
+                src="./images/icons/galaxy.png"
+                alt="galaxy-mood"
+                class="mood-button" />
+            </button>
+            <button class="monk">
+              <img
+                src="./images/icons/monk.png"
+                alt="monk-mood"
+                class="mood-button" />
+            </button>
+            <button class="ocean">
+              <img
+                src="./images/icons/ocean.png"
+                alt="ocean-mood"
+                class="mood-button" />
+            </button>
+            <button class="rain">
+              <img
+                src="./images/icons/raining.png"
+                alt="raining-mood"
+                class="mood-button" />
+            </button>
           </div>
         </div>
       </div>

@@ -56,42 +56,64 @@ video {
 
 .timer-container button:active {
   transform: translateY(0.25rem);
-  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px,
+    rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 
-.player-container .player {
-  height: 32rem;
+.player-container {
+  height: 27rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
-.player .play {
+#play-pause {
   padding: 2rem;
   background-color: transparent;
+  border: 3px solid white;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+#play-pause:hover {
+  padding: 7rem;
   border: 5px solid white;
-  border-radius: 50%;
-  transition: 0.5s;
+}
+#play-pause:hover .play {
+  width: 3rem;
+}
+#play-pause:hover .pause {
+  width: 3rem;
 }
 
-.player .play:hover {
-  padding: 9rem;
-  background-color: transparent;
-  border: 10px solid white;
-  border-radius: 50%;
-}
-
-.player .play:active {
-  padding: 9rem;
-  background-color: transparent;
-  border: 10px solid white;
-  border-radius: 50%;
+#play-pause:active {
   transform: translateY(2rem);
-  stroke: red;
-  stroke-width: 1;
-  stroke-linecap: butt;
-  stroke-dasharray: 0;
+}
+
+.play {
+  width: 1.5rem;
+  transition: all 0.5s;
+}
+
+.pause {
+  width: 1.5rem;
+  transition: all 0.5s;
+}
+
+.restart {
+  height: 2rem;
+  transition: all 0.5s;
+}
+
+.restart:hover {
+  height: 3rem;
+  transform: rotate(360deg);
+}
+
+.time {
+  color: white;
 }
 
 .mood-container .moods {
@@ -100,4 +122,30 @@ video {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.moods button {
+  background: transparent;
+  border: none;
+  transition: all 0.25s;
+}
+
+.mood-button {
+  width: 4rem;
+}
+
+.galaxy:hover {
+  transform: scale(2);
+}
+
+.monk:hover {
+  transform: scale(2);
+}
+
+.ocean:hover {
+  transform: scale(2);
+}
+
+.rain:hover {
+  transform: scale(2);
+} /*# sourceMappingURL=style.css.map */
