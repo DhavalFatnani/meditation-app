@@ -10,18 +10,21 @@
   <body>
     <div class="app-container">
       <div class="video-container">
-        <video
-          autoplay
-          muted
-          loop
-          src="./images/ocean.mp4"
-          class="background-video"></video>
+        <video autoplay muted loop class="background-video">
+          <source src="./images/ocean.mp4" type="video/mp4" id="ocean-video" />
+          <source
+            src="./images/galaxy.mp4"
+            type="video/mp4"
+            id="galaxy-video" />
+          <source src="./images/monk.mp4" type="video/mp4" id="monk-video" />
+          <source src="./images/rain.mp4" type="video/mp4" id="rain-video" />
+        </video>
       </div>
       <div class="ops">
         <div class="timer-container">
-          <button class="two-mins" onclick="setTimer(2)">2 minutes</button>
-          <button class="five-mins" onclick="setTimer(5)">5 minutes</button>
-          <button class="ten-mins" onclick="setTimer(10)">10 minutes</button>
+          <button class="two-mins" onclick="Timer(2)">2 minutes</button>
+          <button class="five-mins" onclick="Timer(5)">5 minutes</button>
+          <button class="ten-mins" onclick="Timer(10)">10 minutes</button>
         </div>
         <div class="player-container">
           <div class="player">
@@ -43,25 +46,25 @@
         </div>
         <div class="mood-container">
           <div class="moods">
-            <button class="galaxy">
+            <button class="galaxy" onclick="triggerGalaxy()">
               <img
                 src="./images/icons/galaxy.png"
                 alt="galaxy-mood"
                 class="mood-button" />
             </button>
-            <button class="monk">
+            <button class="monk" onclick="triggerMonk()">
               <img
                 src="./images/icons/monk.png"
                 alt="monk-mood"
                 class="mood-button" />
             </button>
-            <button class="ocean">
+            <button class="ocean" onclick="triggerOcean()">
               <img
                 src="./images/icons/ocean.png"
                 alt="ocean-mood"
                 class="mood-button" />
             </button>
-            <button class="rain">
+            <button class="rain" onclick="triggerRain()">
               <img
                 src="./images/icons/raining.png"
                 alt="raining-mood"

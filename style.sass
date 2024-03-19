@@ -20,10 +20,12 @@ video
 .ops
     width: 80%
     height: 30rem
-    position: absolute
+    position: relative
     display: flex
     justify-content: space-between
     align-items: center
+    right: 20px
+
     
 .timer-container
     height: 32rem
@@ -33,11 +35,11 @@ video
     align-items: center
 
 .timer-container button
-    padding: 1rem 2rem
+    padding: 1.2rem 2.8rem
     background-color: transparent
     border: 2px solid white
     font-weight: 600
-    font-size: 0.9rem
+    font-size: 2rem
     color: white
     border-radius: 0.6rem
     cursor: pointer
@@ -52,21 +54,21 @@ video
     box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px
 
 .player-container
-    height: 27rem
+    height: 35rem
     display: flex
     flex-direction: column
     justify-content: space-around
     align-items: center
 
 #play-pause
-    padding: 2rem
+    padding: 3rem
     background-color: transparent
     border: 3px solid white
     border-radius: 50%
     transition: all 0.5s
 
 #play-pause:hover
-    padding: 7rem
+    padding: 9rem
     border: 5px solid white
     .play
         width: 3rem
@@ -94,6 +96,7 @@ video
 
 .time
     color: white
+    font-size: 4rem
 
 .mood-container .moods
     height: 32rem
