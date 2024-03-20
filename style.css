@@ -57,7 +57,9 @@ video {
 
 .timer-container button:active {
   transform: translateY(0.25rem);
-  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px,
+    rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 
 .player-container {
@@ -74,6 +76,7 @@ video {
   border: 3px solid white;
   border-radius: 50%;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 #play-pause:hover {
@@ -111,7 +114,7 @@ video {
   transform: rotate(360deg);
 }
 
-.time {
+.timer {
   color: white;
   font-size: 4rem;
 }
@@ -128,6 +131,7 @@ video {
   background: transparent;
   border: none;
   transition: all 0.25s;
+  cursor: pointer;
 }
 
 .mood-button {
@@ -148,4 +152,4 @@ video {
 
 .rain:hover {
   transform: scale(2);
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

@@ -4,66 +4,92 @@ let bg_video = document.querySelector(".background-video");
 bg_video.pause();
 play_button.style.display = "inline";
 pause_button.style.display = "none";
+let galaxy = document.querySelector(".galaxy");
+let monk = document.querySelector(".monk");
+let ocean = document.querySelector(".ocean");
+let rain = document.querySelector(".rain");
 
 function togglePlayPause() {
-  let galaxy = document.querySelector(".galaxy");
-  let monk = document.querySelector(".monk");
-  let ocean = document.querySelector(".ocean");
-  let rain = document.querySelector(".rain");
-
   if (bg_video.paused) {
-    bg_video.play();
-    play_button.style.display = "none";
-    pause_button.style.display = "inline";
-    timerInterval = setInterval(Timer, 1000);
+    playVideo();
   } else {
-    bg_video.pause();
-    pause_button.style.display = "none";
-    play_button.style.display = "inline";
+    pauseVideo();
   }
 }
 
-function restartTimer() {}
+function playVideo() {
+  bg_video.play();
+  play_button.style.display = "none";
+  pause_button.style.display = "inline";
+  timerPlay();
+}
 
-function Timer(time) {
-  let timeLimitInMinutes = Number(time);
-  let timeLimitInSeconds = timeLimitInMinutes * 60;
-  let timerElement = document.querySelector(".time");
-  let minutes = Math.floor(timeLimitInSeconds / 60);
-  let seconds = timeLimitInSeconds % 60;
+function pauseVideo() {
+  bg_video.pause();
+  pause_button.style.display = "none";
+  play_button.style.display = "inline";
+  timerPause();
+}
 
-  timeLimitInSeconds--;
+function restartTimer() {
+  clearInterval(timerInterval);
+  isTimerRunning = false;
+  timeLeft = 0;
+  updateTimerDisplay();
+  togglePlayPause();
+}
 
-  if (timeLimitInSeconds < 0) {
-    timerElement.textContent = "00:00";
+let timerInterval;
+let timeLeft = 0;
+let isTimerRunning = false;
+
+function setTime(minutes) {
+  timeLeft = minutes * 60;
+  updateTimerDisplay();
+}
+
+function updateTimerDisplay() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  document.querySelector(".timer").textContent = `${minutes
+    .toString()
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+}
+
+function timerPlay() {
+  timerInterval = setInterval(updateTime, 1000);
+  isTimerRunning = true;
+}
+
+function timerPause() {
+  if (isTimerRunning) {
     clearInterval(timerInterval);
-    return;
+    isTimerRunning = false;
   }
+}
 
-  if (minutes < 10) {
-    minutes = "0" + minutes;
+function updateTime() {
+  if (timeLeft > 0) {
+    timeLeft--;
+    updateTimerDisplay();
+  } else {
+    clearInterval(timerInterval);
+    isTimerRunning = false;
+    alert("Time Finished!");
   }
-
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
-
-  timerElement.textContent = minutes + ":" + seconds;
 }
 
 function triggerGalaxy() {
   bg_video.src = "./images/galaxy.mp4";
   if (bg_video.play) {
-    pause_button.style.display = "inline";
-    play_button.style.display = "none";
+    pauseVideo();
   }
 }
 
 function triggerMonk() {
   bg_video.src = "./images/monk.mp4";
   if (bg_video.play) {
-    pause_button.style.display = "inline";
-    play_button.style.display = "none";
+    pauseVideo();
   }
 }
 

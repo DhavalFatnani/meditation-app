@@ -22,9 +22,9 @@
       </div>
       <div class="ops">
         <div class="timer-container">
-          <button class="two-mins" onclick="Timer(2)">2 minutes</button>
-          <button class="five-mins" onclick="Timer(5)">5 minutes</button>
-          <button class="ten-mins" onclick="Timer(10)">10 minutes</button>
+          <button class="two-mins" onclick="setTime(2)">2 minutes</button>
+          <button class="five-mins" onclick="setTime(5)">5 minutes</button>
+          <button class="ten-mins" onclick="setTime(10)">10 minutes</button>
         </div>
         <div class="player-container">
           <div class="player">
@@ -42,7 +42,7 @@
             alt="restart-button"
             onclick="restartTimer()"
             class="restart" />
-          <h3 class="time">0:00</h3>
+          <h3 class="timer">0:00</h3>
         </div>
         <div class="mood-container">
           <div class="moods">
