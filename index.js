@@ -81,30 +81,16 @@ function updateTime() {
 
 function triggerGalaxy() {
   bg_video.src = "./images/galaxy.mp4";
-  if (bg_video.play) {
-    pauseVideo();
-  }
 }
 
 function triggerMonk() {
   bg_video.src = "./images/monk.mp4";
-  if (bg_video.play) {
-    pauseVideo();
-  }
 }
 
 function triggerOcean() {
   bg_video.src = "./images/ocean.mp4";
-  if (bg_video.play) {
-    pause_button.style.display = "inline";
-    play_button.style.display = "none";
-  }
 }
 
 function triggerRain() {
   bg_video.src = "./images/rain.mp4";
-  if (bg_video.play) {
-    pause_button.style.display = "inline";
-    play_button.style.display = "none";
-  }
 }
